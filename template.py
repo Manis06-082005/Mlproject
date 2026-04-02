@@ -1,9 +1,8 @@
 import os 
 from pathlib import Path
-import pandas as pd
 import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-project_name = "mlProject"
+project_name = "data_science_project"
 list_of_files = [
     ".github/workflows/.gitkeep",
     f"src/{project_name}/__init__.py",
