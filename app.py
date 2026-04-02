@@ -1,10 +1,13 @@
+
 import sys
-import os
-
-sys.path.append(os.path.abspath("src"))
-
-from src.mlProject.logger import logger
+from data_science_project.exception import CustomException
+from data_science_project.logger import logging
 
 if __name__ == "__main__":
-    logger.info("Starting the ML project application.")
-    logger.info("ML project application has finished execution.")
+    logging.info("Starting the ML project application.")
+    logging.info("ML project application has finished execution.")
+try:
+    a = 1 / 0
+except Exception as e:
+    logging.error("An error occurred in the ML project application.")
+    raise CustomException(e, sys)   
