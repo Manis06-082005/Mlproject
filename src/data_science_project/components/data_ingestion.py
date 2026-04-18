@@ -12,13 +12,16 @@ class DataIngestionConfig:
     train_data_path: str = os.path.join('artifacts', 'train.csv')
     test_data_path: str = os.path.join('artifacts', 'test.csv')
     raw_data_path: str = os.path.join('artifacts', 'data.csv')
+
+
+
 class DataIngestion:
     def __init__(self):
         self.ingestion_config = DataIngestionConfig()
 
     def initiate_data_ingestion(self):
         try:
-            df = read_sql_data()
+            df = pd.read_csv(os.path.join('notebook/data', 'data.csv'))  # Replace with actual data source
             logging.info("Data Ingestion method starts")
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
             df.to_csv(self.ingestion_config.raw_data_path, index=False, header=True)
@@ -27,6 +30,8 @@ class DataIngestion:
             train_set.to_csv(self.ingestion_config.train_data_path, index=False, header=True)
             test_set.to_csv(self.ingestion_config.test_data_path, index=False, header=True)
             logging.info("Ingestion of the data is completed")
+
+              
             return (
                 self.ingestion_config.train_data_path,
                 self.ingestion_config.test_data_path

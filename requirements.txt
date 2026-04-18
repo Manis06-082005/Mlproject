@@ -8,4 +8,8 @@ python-dotenv
 pymysql
 cryptography
 sqlalchemy
+scikit-learn
+xgboost
+catboost
+
 # -e .

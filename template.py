@@ -19,7 +19,9 @@ list_of_files = [
     "app.py",
     "Dockerfile",
     "requirements.txt",
-    "setup.py"]
+    "setup.py"
+    , "notebook/1_EDA.ipynb",
+    "notebook/2_MODEL_TRAINING.ipynb"]
 for path in list_of_files:
 
     file_path = Path(path)
